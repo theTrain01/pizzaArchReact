@@ -16,10 +16,9 @@ const SortPopup = ( {items} ) => {
     };
 
     const handleOutsideClick = (elem) => {
-        if (!sortRef.current.contains(elem.target)) {
+        if (!elem.composedPath().includes(sortRef.current)) {
             setVisible(false);
         }
-        console.log(sortRef.current.contains(elem.target))
     };
 
     const onSelectItem = (index, item) => {
